@@ -5,7 +5,7 @@ import ScatterPlot from "./ScatterPlot";
 
 const Chart = () => {
   const styles = {
-    width: 500,
+    width: 300,
     height: 300,
     padding: 30,
   };

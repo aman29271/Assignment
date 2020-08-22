@@ -55,7 +55,7 @@ const Button = styled.button`
 `;
 const SvgWrapper = styled.div`
   position: relative;
-  width: 500px;
+  width: 320px;
   height: 300px;
   border: 2px solid #1a1a1a;
   margin-bottom: 20px;
