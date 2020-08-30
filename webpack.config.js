@@ -15,7 +15,7 @@ module.exports = {
   node: {
     fs: "empty",
   },
-  devtool: "inline-source-nap",
+  devtool: "inline-source-map",
   devServer: {
     contentBase: "./build",
     hot: true,
