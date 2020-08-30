@@ -4,40 +4,28 @@ import bulma from "./scss/bulma.module.scss";
 import Editor from "./components/editor";
 import formatQuery from "./components/formatQuery";
 import parserExtended from "./components/parser";
+import nodeParser from "./components/nodeParser";
 
 const Task2 = () => {
   const [query, setQuery] = useState("");
   const [formattedQuery, setFormattedQuery] = useState("");
   const [annotation, setAnnotation] = useState([]);
+  const [isFirstTime, setIsFirstTime] = useState(true);
 
   const format = () => {
     setFormattedQuery(formatQuery(query).code);
   };
   const handleValidate = () => {
-    format();
-    parserExtended(query)
-      .then((res) => {
-        const { data } = res;
-        let newAnnotation = [];
-        data.map(({ error, message, line, column }) => {
-          if (error) {
-            newAnnotation.push({
-              row: line - 1,
-              column: column - 1,
-              text: message,
-              type: "error",
-            });
-          } else {
-            newAnnotation = [];
-          }
-        });
-        setAnnotation(newAnnotation);
-      })
-      .catch((err) => {
-        console.log(err);
-        const { message } = err.data[0];
-        setAnnotation({ row: 0, column: 0, text: message, type: "error" });
-      });
+    // format();
+    setIsFirstTime(false);
+    const { error, message, line, column } = nodeParser(query);
+    if (error) {
+      setAnnotation([
+        { text: message, row: line - 1, column: column - 1, type: "error" },
+      ]);
+    } else {
+      setAnnotation([]);
+    }
   };
   useEffect(() => {
     if (formattedQuery !== "") {
@@ -49,6 +37,15 @@ const Task2 = () => {
       };
     }
   }, [formattedQuery]);
+
+  useEffect(() => {
+    if (!isFirstTime) {
+      if (query != "") {
+        handleValidate();
+      }
+    }
+  }, [isFirstTime, query]);
+
   return (
     <section className={bulma["section"]}>
       <div className={bulma["container"]}>

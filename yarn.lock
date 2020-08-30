@@ -3377,6 +3377,19 @@ flatted@^2.0.0:
   resolved "https://registry.yarnpkg.com/flatted/-/flatted-2.0.2.tgz#4575b21e2bcee7434aa9be662f4b7b5f9c2b5138"
   integrity sha512-r5wGx7YeOwNWNlCA0wQ86zKyDLMQr+/RB8xy74M4hTphfmjlijTSSXGuH8rnvKZnfT9i+75zmd8jcKdMR4O6jA==
 
+flora-errors@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/flora-errors/-/flora-errors-2.0.0.tgz#4ef1b8fd3b79138e5b824e25c88bc4502d91c3d0"
+  integrity sha512-Wn2HU65ZlJmnWg28W8pAWRNU0UJeMfqB71DXvosjfs8X72X842maUatavUgEz1q4wT5p9kB7A0J4WtuL/pXj3A==
+
+flora-sql-parser@^0.9.4:
+  version "0.9.4"
+  resolved "https://registry.yarnpkg.com/flora-sql-parser/-/flora-sql-parser-0.9.4.tgz#fc8460fa608f5bcac5ccafaa9216a399a4bd1bfd"
+  integrity sha512-rZTAUwVwPoEc400+6bfilZt2VeDQGZvaWiaQgpYP1Mo/lP8hSZaZtxcBpNnk3OJpD4G7QmLLipz3hzK0pRSx7w==
+  dependencies:
+    flora-errors "^2.0.0"
+    has "^1.0.3"
+
 flush-write-stream@^1.0.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/flush-write-stream/-/flush-write-stream-1.1.1.tgz#8dd7d873a1babc207d94ead0c2e0e44276ebf2e8"
