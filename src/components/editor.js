@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import AceEditor from "react-ace";
-import "ace-builds/src-noconflict/ext-language_tools";
+import 'ace-builds/webpack-resolver'
 
 const Editor = ({ setQuery, formattedQuery, annotations }) => {
   const [value, setValue] = useState("");

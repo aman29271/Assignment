@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
-
-import bulma from "./scss/bulma.module.scss";
+import "bulma/css/bulma.min.css";
 import Editor from "./components/editor";
 import formatQuery from "./components/formatQuery";
-import parserExtended from "./components/parser";
 import nodeParser from "./components/nodeParser";
 
 const Task2 = () => {
@@ -47,21 +45,15 @@ const Task2 = () => {
   }, [isFirstTime, query]);
 
   return (
-    <section className={bulma["section"]}>
-      <div className={bulma["container"]}>
-        <p
-          className={`${bulma.title} ${bulma["is-spaced"]} ${bulma["has-text-centered"]}`}
-        >
-          SQL Validator
-        </p>
+    <section className="section">
+      <div className="container">
+        <p className="title is-spaced has-text-centered">SQL Validator</p>
 
-        <div className={bulma.columns}>
-          <div
-            className={`${bulma.column} ${bulma["is-8-desktop"]} ${bulma["is-offset-2-desktop"]}`}
-          >
-            <div className={`${bulma["field"]} `}>
-              <label className={bulma["label"]}>Query</label>
-              <div className={bulma.control}>
+        <div className="columns">
+          <div className="column is-8-desktop is-offset-2-desktop">
+            <div className="field">
+              <label className="label">Query</label>
+              <div className="control">
                 <Editor
                   setQuery={setQuery}
                   formattedQuery={formattedQuery}
@@ -69,19 +61,13 @@ const Task2 = () => {
                 />
               </div>
             </div>
-            <div className={`${bulma["field"]} `}>
-              <div className={bulma.control}>
-                <div className={bulma.buttons}>
-                  <button
-                    className={`${bulma.button} ${bulma["is-link"]}`}
-                    onClick={handleValidate}
-                  >
+            <div className="field">
+              <div className="control">
+                <div className="buttons">
+                  <button className="button is-link" onClick={handleValidate}>
                     Validate
                   </button>
-                  <button
-                    className={`${bulma.button} ${bulma["is-primary"]}`}
-                    onClick={format}
-                  >
+                  <button className="button is-primary" onClick={format}>
                     Format
                   </button>
                 </div>

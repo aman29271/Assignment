@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { max, scaleLinear } from "d3";
 import styled from "styled-components";
-import bulma from "../scss/bulma.module.scss";
 import DataCircles from "./DataCircles";
 import Modal from "./Modal";
 
@@ -23,7 +22,7 @@ const ScatterPlot = (props) => {
   return (
     <SvgWrapper>
       <Button
-        className={`${bulma.button} ${bulma["is-warning"]}`}
+        className="button is-warning"
         onClick={() => {
           setIsModalActive(true);
         }}
