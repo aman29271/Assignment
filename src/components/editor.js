@@ -12,6 +12,7 @@ const Editor = ({ setQuery, formattedQuery, annotations }) => {
   useEffect(() => {
     if (formattedQuery !== "") {
       setValue(formattedQuery);
+      setQuery(formattedQuery);
     }
   }, [formattedQuery]);
 
